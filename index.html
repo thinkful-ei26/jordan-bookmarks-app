@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bookmark App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+   <div class="container">
+       <h1>My Bookmarks</h1>
+       <form id="js-bookmark-list-form">
+        <button class="submit" name="addBbookmark">Add Bookmark</button>
+        <label for="ratings-menu">Minimum Rating</label>
+            <select name="ratings-menu">
+              <option value="5 Stars" id="5">5 Stars</option>
+              <option value="4 Stars" id="4">4 Stars and Up</option>
+              <option value="3 Stars" id="3">3 Stars and Up</option>
+              <option value="2 Stars" id="2">2 Stars and Up</option>
+              <option value="1 Star" id="1">1 Star and Up</option>
+            <select></label>
+          <span class = "bookmark-list-description">
+                <ul>
+                <li><button class="collapsible" id="1" name="New York Times">New York Times</button></li>
+                <div class="content"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p></div>
+                <li><button class="collapsible" id="2" name="The Onion">The Onion</button></li>
+                <div class="content"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p></div>
+                <li><button class="collapsible" id="3" name="Fox News">Fox News</button></li>
+                <div class="content"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p></div>
+                </ul>
+            </span>
+            <span class = "bookmark-add-expand">
+                    <div class="content"><div class="row">
+                            <div class="add title">
+                              <label for="bookmarkTitle">Bookmark Title</label>
+                              <input class="u-full-width" placeholder="Bookmark Title Here" id="bookmarkTitle">
+                            </div>
+                            <div class="add rating">
+                              <label for="rating">Rating</label>
+                              <select class="u-full-width" id="rating-input">
+                                <option value="5">5 Stars</option>
+                                <option value="4">4 Stars</option>
+                                <option value="3">3 Stars</option>
+                                <option value="2">2 Stars</option>
+                                <option value="1">1 Star</option>
+                              </select>
+                            </div>
+                          </div>
+                          <label for="description">Description</label>
+                          <textarea class="u-full-width" placeholder="Bookmark Description Here" id="description"></textarea>
+                          <input class="button-primary" type="submit" value="Add Bookmark">
+                        </div>
+                        </span>
+        </form>
+    <ul class="bookmark-list js-bookmark-list"></ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="item.js"></script>
+    <script type="text/javascript" src="store.js"></script>
+    <script type="text/javascript" src="bookmarklist-js"></script>
+    <script type="text/javascript" src="index.js"></script>
+
+</body>
+</html>
