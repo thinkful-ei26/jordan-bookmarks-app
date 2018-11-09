@@ -177,7 +177,7 @@ console.log(bookmarkListItemsString)
             render();
           }
         )};
-
+ 
       function handleRatingFilter() {
         console.log(`handleRatingFilter Ran`);
         $('.ratings-menu').on('change', '.ratings', function(event) {
