@@ -12,7 +12,7 @@ const store = (function() {
     { id: cuid(), name: 'Fox News', url: "https://www.foxnews.com/", rating: 0, expanded: false},
   ];
 
-  const adding = true; 
+  let adding = false; 
 
   function addBookmark(item) {
     console.log(`addBookmark ran`)
