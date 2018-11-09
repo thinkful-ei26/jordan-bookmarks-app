@@ -45,18 +45,6 @@ const bookmarkList = (function(){
     return items.join('');
   };
 
-function generateRatingStars(){
- return `<label for="ratings-menu">Minimum Rating</label><br>
-  <select name="ratings-menu">
-  <div class="ratings">
-    <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
-    <option value="4">&#9733;&#9733;&#9733;&#9733;</option>
-    <option value="3">&#9733;&#9733;&#9733;</option>
-    <option value="2">&#9733;&#9733;</option>
-    <option value="1">&#9733;</option>
-  </select></label></div>`
-}
-
   function generateAddBookmarkForm(){
 
     return `<form><div class="container"><div class="row">
@@ -101,8 +89,13 @@ function generateRatingStars(){
       $('.js-add-bookmark').show()
       $('.bookmark-add-expand').empty()
     }
+
+    let items = store.items;
+    if (store.starRating) {
+        items = store.items.filter(item => item.rating >= store.starRating);
+    }
    
-    const bookmarkListItemsString = generateBookmarkString(store.items);
+    const bookmarkListItemsString = generateBookmarkString(items);
 console.log(bookmarkListItemsString)
     $('.js-bookmark-list').html(bookmarkListItemsString);
     };
@@ -180,10 +173,9 @@ console.log(bookmarkListItemsString)
  
       function handleRatingFilter() {
         console.log(`handleRatingFilter Ran`);
-        $('.ratings-menu').on('change', '.ratings', function(event) {
+        $('.ratings-menu').on('change', function(event) {
           event.preventDefault();
-          const value = $(event.currentTarget).val();
-          store.filterByRating(value);
+          store.starRating = parseInt($('.ratings-menu option:selected').val())
           render();
         });
       };

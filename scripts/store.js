@@ -13,6 +13,7 @@ const store = (function() {
   ];
 
   let adding = false; 
+  let starRating = 1;
 
   function addBookmark(item) {
     console.log(`addBookmark ran`)
@@ -42,6 +43,7 @@ const store = (function() {
     findById,
     addBookmark,
     filterByRating,
+    starRating,
     findAndDelete
   };
 
