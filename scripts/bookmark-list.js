@@ -8,7 +8,6 @@ const bookmarkList = (function(){
 
     return `
     <li data-item-id="${item.id}">${item.name}</li>`
-
   };
 
   function generateBookmarkString(bookmarkList) {
@@ -41,7 +40,6 @@ const bookmarkList = (function(){
   <label for="description">Description</label>
   <textarea class="u-full-width" placeholder="Bookmark Description Here" id="description"></textarea>
 </div>`
-
   }
 
 
@@ -84,9 +82,11 @@ const bookmarkList = (function(){
 
     if (store.adding === true) {
       const form = generateAddBookmarkForm()
+      $('.js-add-bookmark').hide()
       $('.bookmark-add-expand').html(form) 
     }
     else {
+      $('.js-add-bookmark').show()
       $('.bookmark-add-expand').empty()
     }
 
@@ -95,7 +95,7 @@ const bookmarkList = (function(){
     $('.js-bookmark-list').html(bookmarkListItemsString);
     };
 
-
+//when bookmark form is submitted, set store.adding === false
     
     function addItemToBookmarkList(name, url, rating, description) {
       console.log(`addItemToBookmarkList ran`);
@@ -115,7 +115,7 @@ const bookmarkList = (function(){
         console.log(`handleBookmarkClick ran`);
         $('.js-add-bookmark').on('click', function (event) {
           event.preventDefault();
-          store.added = true;
+          store.adding = true;
           render();
         });
       };
