@@ -1,32 +1,67 @@
-/* global Item, cuid */
-/*eslint-env jquery*/
+/* global Item, store, cuid */
 'use strict';
-// eslint-disable-next-line no-unused-vars
-/* global store, cuid */
 
 const bookmarkList = (function(){
 
 
-    // function generateNewItemHtml(item) {
-    //   let itemName = `<li class = bookmark-list-items>><button class="submit"
-    //   name="${item.name}</button></li>`
+//   function generateItemElement(item) {
+  
+//     if (!item.expanded) {
+//       return `<ul class="bookmark-list js-bookmark-list" data-item-id="${item.id}">   
+//       <li class="bookmark-name">${item.name}</li>
+      
+//         <div class="bookmark-add-expand">
+//             <div></div>
+//           <button class="description">View More</button>
+//         </div>  
+//       </ul>
+//       </div>`;
+// };
 
-    //   return itemName;
-    // }
+//   if (item.expanded === true) {
+//     return `<ul class="bookmark-list js-bookmark-list" data-item-id="${item.id}">   
+// <li class="bookmark-name">${item.title}</li> 
+// <div class ="bookmark-add-expand">
+//   <div class="add-title">
+//       <div><div class="add-rating">
+//       <div class="add-description">
+//         <div>
+//          ${obj.description}
+//         </div>
+//       </div>
+//         <div class="link-delete-container">
+//             <a href="${obj.url}">${obj.url}</a>
+    
+//     <button class="description">View Less</button>
+//   </div>
+//   </div  
+// </ul>
+// </div>`
+//     }
+//   };
 
-    // function generateExpandedView() {
 
-    //   const expanded = `<li class="bookmark-list-expanded" data-item-id="${Item.id}" 
-    //   <h3 class="bookmark-name js-bookmark-name">${Item.name}</h3>
-    //   <a class="bookmark-link js-bookmark-link" href="${Item.url}" target="_blank">${Item.url}</a>
-    //   <p class="bookmark-description js-bookmark-description>${Item.description}</p>
-    //   <section class="bookmark-rating js-bookmark-rating">
-    //     <p class="bookmark-rating js-bookmark-rating">${Item.rating}</p>
-    //   </section>
-    //   </li>`
+  // function generateBookmarkString(bookmarkList) {
+  //   const items = bookmarkList.map((item) => generateItemElement(item));
+  //   return items.join('');
+  // };
 
-    //   return expanded;
-    // }
+  function render() {
+    console.log(`render ran`)
+    console.log(store.items)
+     let items = store.items ;
+     if (store.handleViewItemDescription) {
+       items = store.items.filter(item => !item.checked)
+     }
+      // render the shopping list in the DOM
+    console.log('`render` ran');
+    // const bookmarkListItemsString = generateBookmarkItemsString(items);
+
+    // insert that HTML into the DOM
+    // $('.js-bookmark-list').html(bookmarkListItemsString);
+    };
+
+
 
     
     function addItemToBookmarkList(name, url, rating, description) {
@@ -71,17 +106,10 @@ const bookmarkList = (function(){
         });
       };
 
-      function render() {
-        console.log(`render ran`)
-      console.log(store.items)
-          return store.items 
-        };
-
-
       function bindEventListeners() {
-        // generateNewItemHtml();
-        // generateExpandedView();
+        // generateItemElement();
         addItemToBookmarkList();
+        // generateBookmarkString();
         // handleDeleteItem();
         handleBookmarkClick();
         handleViewItemDescription();

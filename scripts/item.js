@@ -15,7 +15,7 @@ const Item = (function () {
       url: url,
       rating: rating,
       description: description,
-      expanded: false //prop will be toggled when bookmark view expands
+      expanded: false 
     };
 
   };

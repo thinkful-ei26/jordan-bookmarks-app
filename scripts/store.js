@@ -12,18 +12,12 @@ const store = (function() {
     { id: cuid(), name: 'Fox News', url: "https://www.foxnews.com/", rating: 0, expanded: false},
   ];
 
-  const added = true; 
+  const adding = true; 
 
   function addBookmark(item) {
     console.log(`addBookmark ran`)
       this.items.push(Item.create(item));
     };
-
-  function viewItemDescription(name, url, rating, description) {
-    console.log(`itemDescription ran`)
-    this.items.push(Item.create(name, url, rating, description))
-
-  };  
 
   function findById(id) {
     console.log(`findById ran`)
@@ -37,13 +31,17 @@ const store = (function() {
     });
   }
 
+  const findAndDelete = function(id) {
+    this.storedBookMarks = this.storedBookMarks.filter(item => item.id !== id);
+  };
+
   return {
     items,
-    added,
-    viewItemDescription,
+    adding,
     findById,
     addBookmark,
     filterByRating,
+    findAndDelete
   };
 
 }() );
