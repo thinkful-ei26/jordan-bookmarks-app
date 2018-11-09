@@ -11,40 +11,32 @@
 <body>
    <div class="container">
        <h1>My Bookmarks</h1>
-       <form id="js-bookmark-list-form">
-        
-        <div class = "js-add-bookmark">
-        <button class="submit" name="add-bookmark" class="js-bookmark-list-button">Add Bookmark</button>
-        </div>
-
-        <div class = "bookmark-add-expand"></div>
 
         <div class = "js-ratings-menu">
-        <label for="ratings-menu">Minimum Rating</label>
+        <label for="ratings-menu">Minimum Rating</label><br>
             <select name="ratings-menu">
-                    <div class="stars">
-                            <ul>
-                              <li><span data-rating="1" class="star"></span></li>
-                              <li><span data-rating="2" class="star"></span></li>
-                              <li><span data-rating="3" class="star"></span></li>
-                              <li><span data-rating="4" class="star"></span></li>
-                              <li><span data-rating="5" class="star"></span></li>
-                            </ul>
-                          </div>
             <div class="ratings">
-              <option value="5 Stars" id="5">5 Stars</option>
-              <option value="4 Stars" id="4">4 Stars and Up</option>
-              <option value="3 Stars" id="3">3 Stars and Up</option>
-              <option value="2 Stars" id="2">2 Stars and Up</option>
-              <option value="1 Star" id="1">1 Star and Up</option>
-            </select></label></div></div>
+              <option value="5 Stars" id="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+              <option value="4 Stars" id="4">&#9733;&#9733;&#9733;&#9733;</option>
+              <option value="3 Stars" id="3">&#9733;&#9733;&#9733;</option>
+              <option value="2 Stars" id="2">&#9733;&#9733;</option>
+              <option value="1 Star" id="1">&#9733;</option>
+            </select></label></div></div><br>
+
+            <div class="js-add-bookmark">
+                <button class="submit" name="add-bookmark" class="js-bookmark-list-button">Add Bookmark</button>
+            </div>
 
             <ul class="bookmark-list js-bookmark-list"> 
             </ul>
             </div>
 
+            <div class = "bookmark-view-expand">
+            </div>
 
-        </form>
+            <div class = "bookmark-add-expand">
+            </div>
+
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

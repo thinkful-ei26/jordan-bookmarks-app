@@ -7,9 +7,9 @@
 const store = (function() {
 
   const items = [ 
-    { id: cuid(), name: 'New York Times', url: "https://www.nytimes.com/", rating: 5, expanded: false},
-    { id: cuid(), name: 'The Onion', url: "https://www.theonion.com/", rating: 3, expanded: false},
-    { id: cuid(), name: 'Fox News', url: "https://www.foxnews.com/", rating: 0, expanded: false},
+    { id: cuid(), name: 'New York Times', url: "https://www.nytimes.com/", description: "...", rating: 5, expanded: false},
+    { id: cuid(), name: 'The Onion', url: "https://www.theonion.com/", description: "...", rating: 3, expanded: false},
+    { id: cuid(), name: 'Fox News', url: "https://www.foxnews.com/", description: "...", rating: 0, expanded: false},
   ];
 
   let adding = false; 
