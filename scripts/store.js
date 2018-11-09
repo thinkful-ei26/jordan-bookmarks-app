@@ -12,19 +12,26 @@ const store = (function() {
     { id: cuid(), name: 'Fox News', url: "https://www.foxnews.com/", rating: 0, expanded: false},
   ];
 
-  const added = true || false;
+  const added = true; 
 
   function addBookmark(item) {
     console.log(`addBookmark ran`)
       this.items.push(Item.create(item));
     };
 
+  function viewItemDescription(name, url, rating, description) {
+    console.log(`itemDescription ran`)
+    this.items.push(Item.create(name, url, rating, description))
+
+  };  
+
   function findById(id) {
     console.log(`findById ran`)
     return this.items.find(item => item.id === id);
-  }
+  };
 
   function filterByRating(rating) {
+    console.log(`filterByRating ran`)
     this.items = this.items.filter(item => {
       return item.rating >= rating;
     });
@@ -33,6 +40,7 @@ const store = (function() {
   return {
     items,
     added,
+    viewItemDescription,
     findById,
     addBookmark,
     filterByRating,

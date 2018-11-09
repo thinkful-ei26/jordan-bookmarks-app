@@ -12,17 +12,53 @@
    <div class="container">
        <h1>My Bookmarks</h1>
        <form id="js-bookmark-list-form">
-        <button class="submit" name="addBbookmark" class="js-bookmark-list-button">Add Bookmark</button>
         
-        
+        <div class = "js-add-bookmark">
+        <button class="submit" name="add-bookmark" class="js-bookmark-list-button">Add Bookmark</button>
+        </div>
+
+        <div class = "bookmark-add-expand">
+                <div class="container"><div class="row">
+                        <div class="add title">
+                          <label for="bookmarkTitle">Bookmark Title</label>
+                          <input class="u-full-width" placeholder="Bookmark Title Here" id="bookmarkTitle">
+                          <label for="bookmarkURL">Bookmark URL</label>
+                          <input class="u-full-width" placeholder="Bookmark URL Here" id="bookmarkURL">
+                        </div>
+                        <div class="add rating">
+                          <label for="rating">Rating</label>
+                          <select class="u-full-width" id="rating-input">
+                            <option value="5">5 Stars</option><span>&#9733;</span>
+                            <option value="4">4 Stars</option>
+                            <option value="3">3 Stars</option>
+                            <option value="2">2 Stars</option>
+                            <option value="1">1 Star</option>
+                          </select>
+                        </div>
+                      </div>
+                      <label for="description">Description</label>
+                      <textarea class="u-full-width" placeholder="Bookmark Description Here" id="description"></textarea>
+                    </div>
+
+        <div class = "js-ratings-menu">
         <label for="ratings-menu">Minimum Rating</label>
             <select name="ratings-menu">
+                    <div class="stars">
+                            <ul>
+                              <li><span data-rating="1" class="stars-rating"></span></li>
+                              <li><span data-rating="2" class="stars-rating"></span></li>
+                              <li><span data-rating="3" class="stars-rating"></span></li>
+                              <li><span data-rating="4" class="stars-rating"></span></li>
+                              <li><span data-rating="5" class="stars-rating"></span></li>
+                            </ul>
+                          </div>
+            <div class="ratings">
               <option value="5 Stars" id="5">5 Stars</option>
               <option value="4 Stars" id="4">4 Stars and Up</option>
               <option value="3 Stars" id="3">3 Stars and Up</option>
               <option value="2 Stars" id="2">2 Stars and Up</option>
               <option value="1 Star" id="1">1 Star and Up</option>
-            </select></label>
+            </select></label></div></div>
 
             <ul class="bookmark-list js-bookmark-list"> <span class = "bookmark-list-items">
                     <li><button class="submit" id="1" name="New York Times">New York Times</button></li>
@@ -30,29 +66,6 @@
                     <li><button class="submit" id="3" name="Fox News">Fox News</button></li>
                 </span></ul>
             </div>
-        
-
-            <span class = "bookmark-add-expand">
-                    <div class="container"><div class="row">
-                            <div class="add title">
-                              <label for="bookmarkTitle">Bookmark Title</label>
-                              <input class="u-full-width" placeholder="Bookmark Title Here" id="bookmarkTitle">
-                            </div>
-                            <div class="add rating">
-                              <label for="rating">Rating</label>
-                              <select class="u-full-width" id="rating-input">
-                                <option value="5">5 Stars</option>
-                                <option value="4">4 Stars</option>
-                                <option value="3">3 Stars</option>
-                                <option value="2">2 Stars</option>
-                                <option value="1">1 Star</option>
-                              </select>
-                            </div>
-                          </div>
-                          <label for="description">Description</label>
-                          <textarea class="u-full-width" placeholder="Bookmark Description Here" id="description"></textarea>
-                        </div>
-                        </span>
 
 
         </form>

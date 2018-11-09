@@ -16,7 +16,7 @@
   
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     font-weight: 400;
     line-height: 1.5;
     color: #000000;
@@ -46,10 +46,43 @@ li {
     border: none;
     text-align: left;
     outline: none;
-    font-size: 25px;
+    font-size: 20px;
   }
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .active, li:hover {
     background-color: rgb(167, 155, 155);
   }
+
+  .stars {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    font-size: 3em;
+  }
+  
+  .stars ul {
+    white-space: nowrap;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .stars li {
+    float: left;
+  }
+  
+  .star {
+    color: silver;
+    cursor: pointer;
+    padding: 0 2px;
+  }
+  
+  .star.-selected {
+    color: yellow;
+  }
+  
+  .rating {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
