@@ -32,6 +32,7 @@ const store = (function() {
   }
 
   const findAndDelete = function(id) {
+    console.log(`findAndDelete ran`)
     this.items = this.items.filter(item => item.id !== id);
   };
 

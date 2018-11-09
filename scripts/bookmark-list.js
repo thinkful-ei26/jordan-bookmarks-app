@@ -45,6 +45,17 @@ const bookmarkList = (function(){
     return items.join('');
   };
 
+function generateRatingStars(){
+ return `<label for="ratings-menu">Minimum Rating</label><br>
+  <select name="ratings-menu">
+  <div class="ratings">
+    <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+    <option value="4">&#9733;&#9733;&#9733;&#9733;</option>
+    <option value="3">&#9733;&#9733;&#9733;</option>
+    <option value="2">&#9733;&#9733;</option>
+    <option value="1">&#9733;</option>
+  </select></label></div>`
+}
 
   function generateAddBookmarkForm(){
 
@@ -167,9 +178,9 @@ console.log(bookmarkListItemsString)
           }
         )};
 
-      function handleRatingClick() {
-        console.log(`handleRatingClick Ran`);
-        $('.js-ratings-menu').on('click', function(event) {
+      function handleRatingFilter() {
+        console.log(`handleRatingFilter Ran`);
+        $('.ratings-menu').on('change', '.ratings', function(event) {
           event.preventDefault();
           const value = $(event.currentTarget).val();
           store.filterByRating(value);
@@ -183,7 +194,7 @@ console.log(bookmarkListItemsString)
         handleSaveItemToBookmarksClick();
         handleViewMoreClick();
         handleViewLessClick();
-        handleRatingClick();
+        handleRatingFilter();
       };
 
 return {
