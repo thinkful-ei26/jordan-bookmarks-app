@@ -32,7 +32,7 @@ const store = (function() {
   }
 
   const findAndDelete = function(id) {
-    this.storedBookMarks = this.storedBookMarks.filter(item => item.id !== id);
+    this.items = this.items.filter(item => item.id !== id);
   };
 
   return {

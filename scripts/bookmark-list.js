@@ -10,11 +10,12 @@ const bookmarkList = (function(){
     
     if (!item.expanded){
     return `<li data-item-id="${item.id}" class = 'js-item-element'>${item.name}
-            <button class = "expanded-view">View More</button></li>    
+            <button class = "expanded-view">View More</button>   
+            <button class = "delete-bookmark">Delete</button></li>  
     `
   }
     else {
-      return `<div class = collapsed><table>
+      return `<div class = 'collapsed js-item-element' data-item-id="${item.id}"><table>
     <thead>
         <tr>
             <th colspan="2">${item.name}</th>
@@ -95,9 +96,6 @@ console.log(bookmarkListItemsString)
     $('.js-bookmark-list').html(bookmarkListItemsString);
     };
 
-      // function handleDeleteItem() {
-
-      // }
 
       function addItemToBookmarks(name, url, description, rating) {
         try {
@@ -154,8 +152,18 @@ console.log(bookmarkListItemsString)
       function handleViewLessClick(){
         $('.js-bookmark-list').on('click', '.collapsed-view', function (event) {
           event.preventDefault();
-          $(event.currentTarget).remove();
+          const id = getItemIdFromElement(event.currentTarget)
+          store.findById(id).expanded = false;
           render();
+          }
+        )};
+
+        function handleDeleteItem() {
+          $('.js-bookmark-list').on('click', '.delete-bookmark', function (event) {
+            event.preventDefault();
+            const id = getItemIdFromElement(event.currentTarget);
+            store.findAndDelete(id);
+            render();
           }
         )};
 
@@ -170,7 +178,7 @@ console.log(bookmarkListItemsString)
       };
 
       function bindEventListeners() {
-        // handleDeleteItem();
+        handleDeleteItem();
         handleAddBookmarkClick();
         handleSaveItemToBookmarksClick();
         handleViewMoreClick();
