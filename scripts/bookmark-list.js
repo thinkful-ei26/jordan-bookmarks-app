@@ -178,15 +178,14 @@ console.log(bookmarkListItemsString)
           }
         )};
 
-      function handleRatingFilter() {
-        console.log(`handleRatingFilter Ran`);
-        $('.ratings-menu').on('change', '.ratings', function(event) {
-          event.preventDefault();
-          const value = $(event.currentTarget).val();
-          store.filterByRating(value);
-          render();
-        });
-      };
+        function handleRatingFilter() {
+          console.log(`handleRatingFilter Ran`);
+          $('.ratings-menu').on('change', function(event) {
+            event.preventDefault();
+            store.starRating = parseInt($('.ratings-menu option:selected').val())
+            render();
+          });
+        };
 
       function bindEventListeners() {
         handleDeleteItem();
