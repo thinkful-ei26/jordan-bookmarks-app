@@ -88,7 +88,6 @@ function generateRatingStars(){
   </div></form>`
   }
 
-
   function render() {
     // console.log(`render ran`)
 
@@ -101,8 +100,13 @@ function generateRatingStars(){
       $('.js-add-bookmark').show()
       $('.bookmark-add-expand').empty()
     }
+
+    let items = store.items;
+    if (store.starRating) {
+        items = store.items.filter(item => item.rating >= store.starRating);
+    }
    
-    const bookmarkListItemsString = generateBookmarkString(store.items);
+    const bookmarkListItemsString = generateBookmarkString(items);
 console.log(bookmarkListItemsString)
     $('.js-bookmark-list').html(bookmarkListItemsString);
     };
@@ -177,15 +181,15 @@ console.log(bookmarkListItemsString)
             render();
           }
         )};
-
-        function handleRatingFilter() {
-          console.log(`handleRatingFilter Ran`);
-          $('.ratings-menu').on('change', function(event) {
-            event.preventDefault();
-            store.starRating = parseInt($('.ratings-menu option:selected').val())
-            render();
-          });
-        };
+ 
+      function handleRatingFilter() {
+        console.log(`handleRatingFilter Ran`);
+        $('.ratings-menu').on('change', function(event) {
+          event.preventDefault();
+          store.starRating = parseInt($('.ratings-menu option:selected').val())
+          render();
+        });
+      };
 
       function bindEventListeners() {
         handleDeleteItem();
