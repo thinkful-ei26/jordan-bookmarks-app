@@ -10,31 +10,31 @@ const bookmarkList = (function(){
     
     if (!item.expanded){
     return `<li data-item-id="${item.id}" class = 'js-item-element'>${item.name}
-            <button class = "expanded-view">View More</button>   
-            <button class = "delete-bookmark">Delete</button></li>  
+            <button class = "expanded-view" aria-label="View More">View More</button>   
+            <button class = "delete-bookmark" aria-label="Delete">Delete</button></li>  
     `
   }
     else {
       return `<div class = 'collapsed js-item-element' data-item-id="${item.id}"><table>
     <thead>
         <tr>
-            <th colspan="2">${item.name}</th>
+            <th colspan="2" aria-label="Bookmark Title" >${item.name}</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>${item.url}</td></tr>
+            <td aria-label="Bookmark URL">${item.url}</td></tr>
             <tr>
-            <td>${item.description}</td>
+            <td aria-label="Bookmark Description">${item.description}</td>
         </tr>
         <tfoot>
           <tr>
-        <th colspan="2">${item.rating}</th>
+        <th colspan="2" aria-label="Bookmark Rating">${item.rating}</th>
           </tr>
         </tfoot>
     </tbody>
 </table>
-<button class = "collapsed-view">View Less</button>
+<button class = "collapsed-view" aria-label="View Less">View Less</button>
 <div>`
   };
 }
@@ -46,14 +46,14 @@ const bookmarkList = (function(){
   };
 
 function generateRatingStars(){
- return `<label for="ratings-menu">Minimum Rating</label><br>
+ return `<label for="ratings-menu" aria-label="select a rating">Minimum Rating</label><br>
   <select name="ratings-menu">
   <div class="ratings">
-    <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
-    <option value="4">&#9733;&#9733;&#9733;&#9733;</option>
-    <option value="3">&#9733;&#9733;&#9733;</option>
-    <option value="2">&#9733;&#9733;</option>
-    <option value="1">&#9733;</option>
+    <option value="5" aria-label="five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+    <option value="4" aria-label="four stars">&#9733;&#9733;&#9733;&#9733;</option>
+    <option value="3" aria-label="three stars">&#9733;&#9733;&#9733;</option>
+    <option value="2" aria-label="two stars">&#9733;&#9733;</option>
+    <option value="1" aria-label="one star">&#9733;</option>
   </select></label></div>`
 }
 
@@ -61,20 +61,20 @@ function generateRatingStars(){
 
     return `<form><div class="container"><div class="row">
     <div class="add title">
-      <label for="bookmarkTitle">Title</label>
+      <label for="bookmarkTitle" aria-label="add bookmark title">Title</label>
       <input type="text" placeholder="Bookmark Title Here" id="bookmarkTitle">
       </div>
       <div class="add url">
-      <label for="bookmarkURL">URL</label>
+      <label for="bookmarkURL" aria-label="add bookmark URL">URL</label>
       <input type="text" placeholder="Bookmark URL Here" id="bookmarkURL">
       <div>
     </div>
     <div class = "add description">
-  <label for="description">Description</label>
+  <label for="description" aria-label="add Bookmark Description">Description</label>
   <textarea class="u-full-width" placeholder="Description Here" id="bookmarkDescription"></textarea>
 </div>
     <div class="add rating">
-      <label for="bookmarkRating">Rating</label>
+      <label for="bookmarkRating" aria-label="add Bookmark Rating">Rating</label>
       <select class="u-full-width" id="bookmarkRating">
         <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
         <option value="4">&#9733;&#9733;&#9733;&#9733;</option>
@@ -84,7 +84,7 @@ function generateRatingStars(){
       </select>
     </div>
     <div class="save-bookmark">
-      <input type="submit" name="save-bookmark" value ="save">
+      <input type="submit" aria-label="save bookmark" name="save-bookmark" value ="save">
   </div></form>`
   }
 
