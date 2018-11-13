@@ -45,17 +45,6 @@ const bookmarkList = (function(){
     return items.join('');
   };
 
-function generateRatingStars(){
- return `<label for="ratings-menu" aria-label="select a rating">Minimum Rating</label><br>
-  <select name="ratings-menu">
-  <div class="ratings">
-    <option value="5" aria-label="five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
-    <option value="4" aria-label="four stars">&#9733;&#9733;&#9733;&#9733;</option>
-    <option value="3" aria-label="three stars">&#9733;&#9733;&#9733;</option>
-    <option value="2" aria-label="two stars">&#9733;&#9733;</option>
-    <option value="1" aria-label="one star">&#9733;</option>
-  </select></label></div>`
-}
 
   function generateAddBookmarkForm(){
 
@@ -107,7 +96,7 @@ function generateRatingStars(){
     }
    
     const bookmarkListItemsString = generateBookmarkString(items);
-console.log(bookmarkListItemsString)
+    console.log(bookmarkListItemsString)
     $('.js-bookmark-list').html(bookmarkListItemsString);
     };
 
@@ -186,7 +175,9 @@ console.log(bookmarkListItemsString)
         console.log(`handleRatingFilter Ran`);
         $('.ratings-menu').on('change', function(event) {
           event.preventDefault();
-          store.starRating = parseInt($('.ratings-menu option:selected').val())
+          console.log(`ratings filter ran`)
+          store.starRating = parseInt($('.ratings-menu option:selected').val());
+          store.filterByRating(store.starRating);
           render();
         });
       };
@@ -205,3 +196,4 @@ render: render,
 bindEventListeners: bindEventListeners,
    };
 }());
+

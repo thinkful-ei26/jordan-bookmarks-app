@@ -13,7 +13,7 @@ const store = (function() {
   ];
 
   let adding = false; 
-  let starRating = 1;
+  let starRating = 0;
 
   function addBookmark(item) {
     console.log(`addBookmark ran`)
@@ -40,10 +40,10 @@ const store = (function() {
   return {
     items,
     adding,
-    starRating,
     findById,
     addBookmark,
     filterByRating,
+    starRating,
     findAndDelete
   };
 
