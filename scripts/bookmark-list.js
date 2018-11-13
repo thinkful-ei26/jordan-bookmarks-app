@@ -51,20 +51,20 @@ const bookmarkList = (function(){
     return `<form><div class="container"><div class="row">
     <div class="add title">
       <label for="bookmarkTitle" aria-label="add bookmark title">Title</label>
-      <input type="text" placeholder="Bookmark Title Here" id="bookmarkTitle">
+      <input type="text" placeholder="Bookmark Title Here" id="bookmarkTitle" aria-required="true" required>
       </div>
       <div class="add url">
       <label for="bookmarkURL" aria-label="add bookmark URL">URL</label>
-      <input type="text" placeholder="Bookmark URL Here" id="bookmarkURL">
+      <input type="text" placeholder="Bookmark URL Here" id="bookmarkURL" aria-required="true" required>
       <div>
     </div>
     <div class = "add description">
   <label for="description" aria-label="add Bookmark Description">Description</label>
-  <textarea class="u-full-width" placeholder="Description Here" id="bookmarkDescription"></textarea>
+  <textarea class="u-full-width" placeholder="Description Here" id="bookmarkDescription" aria-required="true" required></textarea>
 </div>
     <div class="add rating">
       <label for="bookmarkRating" aria-label="add Bookmark Rating">Rating</label>
-      <select class="u-full-width" id="bookmarkRating">
+      <select class="u-full-width" id="bookmarkRating" aria-required="true" required>
         <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
         <option value="4">&#9733;&#9733;&#9733;&#9733;</option>
         <option value="3">&#9733;&#9733;&#9733;</option>
@@ -101,10 +101,9 @@ const bookmarkList = (function(){
     };
 
 
-      function addItemToBookmarks(name, url, description, rating) {
+      function addItemToBookmarks(name, url, rating, description) {
         try {
-          Item.validateName(name, url, description, rating);
-          store.items.push({ id: cuid(), name: name, url: url, description: description, rating: rating, expanded: false });
+          store.items.push({ id: cuid(), name: name, url: url, rating: rating, description: description, expanded: false });
         } catch(error) {
           console.log(`'Cannot add item: ${error.message}'`);
         }

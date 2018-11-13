@@ -6,18 +6,15 @@
 // eslint-disable-next-line no-unused-vars
 const store = (function() {
 
-  const items = [ 
-    { id: cuid(), name: 'New York Times', url: "https://www.nytimes.com/", description: "...", rating: 5, expanded: false},
-    { id: cuid(), name: 'The Onion', url: "https://www.theonion.com/", description: "...", rating: 3, expanded: false},
-    { id: cuid(), name: 'Fox News', url: "https://www.foxnews.com/", description: "...", rating: 0, expanded: false},
-  ];
+  const items = [];
 
   let adding = false; 
   let starRating = 0;
 
-  function addBookmark(item) {
+  function addBookmark(name, url, rating, description) {
     console.log(`addBookmark ran`)
-      this.items.push(Item.create(item));
+      this.items.push(Item.create(name, url, rating, description));
+  
     };
 
   function findById(id) {
