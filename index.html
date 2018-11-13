@@ -12,8 +12,14 @@
 <body>
    <div class="container">
        <h1>My Bookmarks</h1>
+       <div class="js-add-bookmark">
+            <button class="submit" name="add-bookmark" class="js-bookmark-list-button">Create New Bookmark!</button>
+        </div><br>
 
-        <label for="ratings-menu">Minimum Rating</label><br>
+        <div class = "bookmark-add-expand">
+            </div>
+
+        <label for="ratings-menu">Search by Minimum Rating</label><br>
             <select name="ratings-menu" class="ratings-menu">
               <option value="5 Stars" id="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
               <option value="4 Stars" id="4">&#9733;&#9733;&#9733;&#9733;</option>
@@ -29,13 +35,7 @@
             <div class = "bookmark-view-expand">
             </div>
 
-            <div class = "bookmark-add-expand">
-            </div>
-
-            <div class="js-add-bookmark">
-                <button class="submit" name="add-bookmark" class="js-bookmark-list-button">Add Bookmark</button>
-            </div>
-
+        </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

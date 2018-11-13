@@ -2,7 +2,7 @@
   
   
   html {
-    font-family: sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -24,26 +24,27 @@ body {
     background-color: rgb(255, 255, 255);
   }
 
-  .add-bookmark-form{
-    list-style-type: none;
-    display: inline-block;
-    font: 13px Arial, Helvetica, sans-serif;
-    color: #888;
-    margin-bottom: 15px;
-  }
+h1 {
+  text-align: center;
+  /* padding-left: 5%; */
+}
 
-.container {
-    display: block;
+/* .container {
+    display: inline-block;
     margin-top: 0em;
     margin-right: auto; 
     margin-left:  auto; 
-    max-width: 960px; 
     padding-right: 10px; 
     padding-left:  10px;
-    }
+    } */
 
 ul {
     list-style-type: none;
+    display: inline-block;
+    font: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: #888;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 /* Style the button that is used  */
@@ -52,11 +53,11 @@ li {
     color: rgb(255, 255, 255);
     cursor: pointer;
     padding: 10px;
-    width: 90%;
+    width: 100%;
     border: none;
-    text-align: left;
+    text-align: center;
     outline: none;
-    font-size: 20px;
+    font-size: 20px "Palatino Linotype", "Book Antiqua", Palatino, serif;;
   }
   
 table {
@@ -71,13 +72,21 @@ table {
     font-size: 20px;
   }
 
+  input button {
+    display: inline-block;
+  }
+
+  .textbox {
+    text-align: center;
+  }
+
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .active, li:hover {
     background-color: rgb(167, 155, 155);
   }
 
   .rating {
-    display: inline-block;
-    vertical-align: middle;
+    display: block;
+    padding-left: 25%;
   }
   

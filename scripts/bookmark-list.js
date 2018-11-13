@@ -49,27 +49,27 @@ const bookmarkList = (function(){
   function generateAddBookmarkForm(){
 
     return `<form><div class = "container"><ul class="add-bookmark-form" aria-live="polite">
-    <div class="add title" role="textbox" aria-live="polite">
     <li>
-      <label for="bookmarkTitle" aria-label="add bookmark title">Title</label>
+    <div class="add title" role="textbox" aria-live="polite">
+      <label for="bookmarkTitle" aria-label="add bookmark title">Title</label><br>
       <input type="text" placeholder="Bookmark Title Here" id="bookmarkTitle" aria-required="true" required>
       </div>
       </li>
       <li>
       <div class="add url" role="textbox" aria-live="polite">
-      <label for="bookmarkURL" aria-label="add bookmark URL">URL</label>
+      <label for="bookmarkURL" aria-label="add bookmark URL">URL</label><br>
       <input type="url" placeholder="Bookmark URL Here" id="bookmarkURL" aria-required="true" required>
     </div>
     </li>
     <li>
     <div class = "add description" role="textbox" aria-live="polite">
-  <label for="description" aria-label="add Bookmark Description">Description</label>
+  <label for="description" aria-label="add Bookmark Description">Description</label><br>
   <textarea class="description" placeholder="Description Here" id="bookmarkDescription" aria-required="true" required></textarea>
   </div>
     </li>
     <li>
     <div class="add rating" role="radio-group" aria-live="polite">
-      <label for="bookmarkRating" aria-label="add Bookmark Rating">Rating</label>
+
       <select class="rating" id="bookmarkRating" aria-required="true" required>
         <option value="5" role="radio">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
         <option value="4" role="radio">&#9733;&#9733;&#9733;&#9733;</option>
@@ -194,11 +194,11 @@ const bookmarkList = (function(){
       };
 
       function bindEventListeners() {
-        handleDeleteItem();
         handleAddBookmarkClick();
         handleSaveItemToBookmarksClick();
         handleViewMoreClick();
         handleViewLessClick();
+        handleDeleteItem();
         handleRatingFilter();
       };
 
