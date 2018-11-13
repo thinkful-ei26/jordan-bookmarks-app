@@ -15,7 +15,7 @@ const bookmarkList = (function(){
     `
   }
     else {
-      return `<div class = 'collapsed js-item-element' data-item-id="${item.id}" aria-live="polite"><table>
+      return `<div class = 'collapsed js-item-element' data-item-id="${item.id}"><table>
     <thead>
         <tr>
             <th colspan="2" aria-label="Bookmark Title" aria-live="polite">${item.name}</th>
@@ -101,9 +101,9 @@ const bookmarkList = (function(){
     };
 
 
-      function addItemToBookmarks(name, url, rating, description) {
+      function addItemToBookmarks(name, url, description, rating) {
         try {
-          store.items.push({ id: cuid(), name: name, url: url, rating: rating, description: description, expanded: false });
+          store.items.push({ id: cuid(), name: name, url: url, description: description, rating: rating, expanded: false });
         } catch(error) {
           console.log(`'Cannot add item: ${error.message}'`);
         }
