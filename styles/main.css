@@ -24,12 +24,22 @@ body {
     background-color: rgb(255, 255, 255);
   }
 
+  .add-bookmark-form{
+    list-style-type: none;
+    display: inline-block;
+    font: 13px Arial, Helvetica, sans-serif;
+    color: #888;
+    margin-bottom: 15px;
+  }
+
 .container {
-    width: 75%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+    display: block;
+    margin-top: 0em;
+    margin-right: auto; 
+    margin-left:  auto; 
+    max-width: 960px; 
+    padding-right: 10px; 
+    padding-left:  10px;
     }
 
 ul {

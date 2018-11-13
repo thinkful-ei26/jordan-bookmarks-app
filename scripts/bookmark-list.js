@@ -9,7 +9,7 @@ const bookmarkList = (function(){
     // console.log(item)
     
     if (!item.expanded){
-    return `<li data-item-id="${item.id}" class = 'js-item-element'>${item.name}
+    return `<li data-item-id="${item.id}" class = 'js-item-element'>${item.name} <br> ${item.rating} star(s)
             <button class = "expanded-view" aria-label="View More" aria-live="polite">View More</button>   
             <button class = "delete-bookmark" aria-label="Delete" aria-live="polite">Delete</button></li>  
     `
@@ -29,7 +29,7 @@ const bookmarkList = (function(){
         </tr>
         <tfoot>
           <tr>
-        <th colspan="2" aria-label="Bookmark Rating" aria-live="polite">${item.rating}</th>
+        <th colspan="2" aria-label="Bookmark Rating" aria-live="polite">${item.rating} star(s)</th>
           </tr>
         </tfoot>
     </tbody>
@@ -48,23 +48,29 @@ const bookmarkList = (function(){
 
   function generateAddBookmarkForm(){
 
-    return `<form><div class="container" aria-live="polite"><div class="row" aria-live="polite">
+    return `<form><div class = "container"><ul class="add-bookmark-form" aria-live="polite">
     <div class="add title" aria-live="polite">
+    <li>
       <label for="bookmarkTitle" aria-label="add bookmark title">Title</label>
       <input type="text" placeholder="Bookmark Title Here" id="bookmarkTitle" aria-required="true" required>
       </div>
+      </li>
+      <li>
       <div class="add url" aria-live="polite">
       <label for="bookmarkURL" aria-label="add bookmark URL">URL</label>
       <input type="url" placeholder="Bookmark URL Here" id="bookmarkURL" aria-required="true" required>
-      <div>
     </div>
+    </li>
+    <li>
     <div class = "add description" aria-live="polite">
   <label for="description" aria-label="add Bookmark Description">Description</label>
-  <textarea class="u-full-width" placeholder="Description Here" id="bookmarkDescription" aria-required="true" required></textarea>
-</div>
+  <textarea class="description" placeholder="Description Here" id="bookmarkDescription" aria-required="true" required></textarea>
+  </div>
+    </li>
+    <li>
     <div class="add rating" aria-live="polite">
       <label for="bookmarkRating" aria-label="add Bookmark Rating">Rating</label>
-      <select class="u-full-width" id="bookmarkRating" aria-required="true" required>
+      <select class="rating" id="bookmarkRating" aria-required="true" required>
         <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
         <option value="4">&#9733;&#9733;&#9733;&#9733;</option>
         <option value="3">&#9733;&#9733;&#9733;</option>
@@ -72,9 +78,15 @@ const bookmarkList = (function(){
         <option value="1">&#9733;</option>
       </select>
     </div>
+    </li>
+    <li>
     <div class="save-bookmark" aria-live="polite">
       <input type="submit" aria-label="save bookmark" name="save-bookmark" value ="save">
-  </div></form>`
+      </div>
+      </li>
+      </ul>
+      </div>
+      </form>`
   }
 
   function render() {
