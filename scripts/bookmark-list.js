@@ -10,31 +10,31 @@ const bookmarkList = (function(){
     
     if (!item.expanded){
     return `<li data-item-id="${item.id}" class = 'js-item-element'>${item.name}
-            <button class = "expanded-view" aria-label="View More">View More</button>   
-            <button class = "delete-bookmark" aria-label="Delete">Delete</button></li>  
+            <button class = "expanded-view" aria-label="View More" aria-live="polite">View More</button>   
+            <button class = "delete-bookmark" aria-label="Delete" aria-live="polite">Delete</button></li>  
     `
   }
     else {
-      return `<div class = 'collapsed js-item-element' data-item-id="${item.id}"><table>
+      return `<div class = 'collapsed js-item-element' data-item-id="${item.id}" aria-live="polite"><table>
     <thead>
         <tr>
-            <th colspan="2" aria-label="Bookmark Title" >${item.name}</th>
+            <th colspan="2" aria-label="Bookmark Title" aria-live="polite">${item.name}</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td aria-label="Bookmark URL">${item.url}</td></tr>
+            <td aria-label="Bookmark URL" aria-live="polite">${item.url}</td></tr>
             <tr>
-            <td aria-label="Bookmark Description">${item.description}</td>
+            <td aria-label="Bookmark Description" aria-live="polite">${item.description}</td>
         </tr>
         <tfoot>
           <tr>
-        <th colspan="2" aria-label="Bookmark Rating">${item.rating}</th>
+        <th colspan="2" aria-label="Bookmark Rating" aria-live="polite">${item.rating}</th>
           </tr>
         </tfoot>
     </tbody>
 </table>
-<button class = "collapsed-view" aria-label="View Less">View Less</button>
+<button class = "collapsed-view" aria-label="View Less" aria-live="polite">View Less</button>
 <div>`
   };
 }
@@ -48,21 +48,21 @@ const bookmarkList = (function(){
 
   function generateAddBookmarkForm(){
 
-    return `<form><div class="container"><div class="row">
-    <div class="add title">
+    return `<form><div class="container" aria-live="polite"><div class="row" aria-live="polite">
+    <div class="add title" aria-live="polite">
       <label for="bookmarkTitle" aria-label="add bookmark title">Title</label>
       <input type="text" placeholder="Bookmark Title Here" id="bookmarkTitle" aria-required="true" required>
       </div>
-      <div class="add url">
+      <div class="add url" aria-live="polite">
       <label for="bookmarkURL" aria-label="add bookmark URL">URL</label>
-      <input type="text" placeholder="Bookmark URL Here" id="bookmarkURL" aria-required="true" required>
+      <input type="url" placeholder="Bookmark URL Here" id="bookmarkURL" aria-required="true" required>
       <div>
     </div>
-    <div class = "add description">
+    <div class = "add description" aria-live="polite">
   <label for="description" aria-label="add Bookmark Description">Description</label>
   <textarea class="u-full-width" placeholder="Description Here" id="bookmarkDescription" aria-required="true" required></textarea>
 </div>
-    <div class="add rating">
+    <div class="add rating" aria-live="polite">
       <label for="bookmarkRating" aria-label="add Bookmark Rating">Rating</label>
       <select class="u-full-width" id="bookmarkRating" aria-required="true" required>
         <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
@@ -72,7 +72,7 @@ const bookmarkList = (function(){
         <option value="1">&#9733;</option>
       </select>
     </div>
-    <div class="save-bookmark">
+    <div class="save-bookmark" aria-live="polite">
       <input type="submit" aria-label="save bookmark" name="save-bookmark" value ="save">
   </div></form>`
   }
