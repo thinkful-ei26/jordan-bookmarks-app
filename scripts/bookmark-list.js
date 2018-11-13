@@ -10,8 +10,8 @@ const bookmarkList = (function(){
     
     if (!item.expanded){
     return `<li data-item-id="${item.id}" class = 'js-item-element'>${item.name} <br> ${item.rating} star(s)
-            <button class = "expanded-view" aria-label="View More" aria-live="polite">View More</button>   
-            <button class = "delete-bookmark" aria-label="Delete" aria-live="polite">Delete</button></li>  
+            <button class = "expanded-view" aria-label="View More" role="button" aria-live="polite">View More</button>   
+            <button class = "delete-bookmark" aria-label="Delete" role="button" aria-live="polite">Delete</button></li>  
     `
   }
     else {
@@ -34,7 +34,7 @@ const bookmarkList = (function(){
         </tfoot>
     </tbody>
 </table>
-<button class = "collapsed-view" aria-label="View Less" aria-live="polite">View Less</button>
+<button class = "collapsed-view" aria-label="View Less" role="button" aria-live="polite">View Less</button>
 <div>`
   };
 }
@@ -49,39 +49,39 @@ const bookmarkList = (function(){
   function generateAddBookmarkForm(){
 
     return `<form><div class = "container"><ul class="add-bookmark-form" aria-live="polite">
-    <div class="add title" aria-live="polite">
+    <div class="add title" role="textbox" aria-live="polite">
     <li>
       <label for="bookmarkTitle" aria-label="add bookmark title">Title</label>
       <input type="text" placeholder="Bookmark Title Here" id="bookmarkTitle" aria-required="true" required>
       </div>
       </li>
       <li>
-      <div class="add url" aria-live="polite">
+      <div class="add url" role="textbox" aria-live="polite">
       <label for="bookmarkURL" aria-label="add bookmark URL">URL</label>
       <input type="url" placeholder="Bookmark URL Here" id="bookmarkURL" aria-required="true" required>
     </div>
     </li>
     <li>
-    <div class = "add description" aria-live="polite">
+    <div class = "add description" role="textbox" aria-live="polite">
   <label for="description" aria-label="add Bookmark Description">Description</label>
   <textarea class="description" placeholder="Description Here" id="bookmarkDescription" aria-required="true" required></textarea>
   </div>
     </li>
     <li>
-    <div class="add rating" aria-live="polite">
+    <div class="add rating" role="radio-group" aria-live="polite">
       <label for="bookmarkRating" aria-label="add Bookmark Rating">Rating</label>
       <select class="rating" id="bookmarkRating" aria-required="true" required>
-        <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
-        <option value="4">&#9733;&#9733;&#9733;&#9733;</option>
-        <option value="3">&#9733;&#9733;&#9733;</option>
-        <option value="2">&#9733;&#9733;</option>
-        <option value="1">&#9733;</option>
+        <option value="5" role="radio">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+        <option value="4" role="radio">&#9733;&#9733;&#9733;&#9733;</option>
+        <option value="3" role="radio">&#9733;&#9733;&#9733;</option>
+        <option value="2" role="radio">&#9733;&#9733;</option>
+        <option value="1" role="radio">&#9733;</option>
       </select>
     </div>
     </li>
     <li>
     <div class="save-bookmark" aria-live="polite">
-      <input type="submit" aria-label="save bookmark" name="save-bookmark" value ="save">
+      <input type="submit" aria-label="save bookmark" role="button" name="save-bookmark" value ="save">
       </div>
       </li>
       </ul>
